@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dumas.Tech — Mais de 10 anos em desenvolvimento de produtos digitais. Especialistas em aplicações mobile, sites e soluções de grande porte para startups, instituições financeiras e grandes organizações."
+    />
+    <meta
+      name="keywords"
+      content="Dumas.Tech, aplicativos mobile, desenvolvimento de sites, aplicações sob medida, instituições financeiras, soluções enterprise"
+    />
+    <title>
+      Dumas.Tech — Especialistas em Aplicações Mobile e Soluções Digitais
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Canvas Particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Nav -->
+    <nav id="navbar">
+      <a href="#home" class="logo">
+        <div class="logo-mark">V</div>
+        Dumas<em>Tech</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#abordagem">Nossa Abordagem</a></li>
+        <li><a href="#ia">IA</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a
+        href="https://wa.me/5511963501236?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento."
+        class="nav-wa"
+        target="_blank"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
+        WhatsApp
+      </a>
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+        <li><a href="#abordagem" onclick="closeMenu()">Nossa Abordagem</a></li>
+        <li><a href="#ia" onclick="closeMenu()">Inteligência Artificial</a></li>
+        <li><a href="#diferenciais" onclick="closeMenu()">Diferenciais</a></li>
+        <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+      </ul>
+      <a
+        href="https://wa.me/5511963501236?text=Olá!%20Vim%20pelo%20site%20e%20quero%20um%20orçamento."
+        class="nav-wa"
+        target="_blank"
+        onclick="closeMenu()"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
+        Fale no WhatsApp
+      </a>
+    </div>
+
+    <!-- Hero -->
+    <section id="home">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-grid-lines"></div>
+
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow reveal">
+            <span class="eyebrow-dot"></span>
+            <span>Dumas.Tech — Mais de 10 anos em produtos digitais</span>
+          </div>
+
+          <h1 class="hero-h1">
+            <div class="line reveal delay-1"><span>APLICAÇÕES</span></div>
+            <div class="line reveal delay-2">
+              <span class="accent glitch" data-text="MOBILE">MOBILE</span>
+            </div>
+            <div class="line reveal delay-3">
+              <span class="outline-text">E SOLUÇÕES DIGITAIS</span>
+            </div>
+          </h1>
+
+          <p class="hero-sub reveal delay-3">
+            Transformamos ideias em produtos digitais sob medida. Há mais de 10
+            anos somos especialistas em desenvolvimento de aplicações mobile
+            para Android e iOS, além de sites e plataformas web. Construímos
+            soluções conforme a necessidade real de cada cliente — sejam
+            aplicativos online, offline, híbridos, sistemas complexos, produtos
+            white label ou plataformas com integração em inteligência
+            artificial.
+          </p>
+
+          <div class="hero-actions reveal delay-4">
+            <a
+              href="https://wa.me/5511963501236?text=Olá!%20Quero%20conversar%20sobre%20meu%20projeto."
+              class="btn-wa"
+              target="_blank"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+              Fale no WhatsApp
+            </a>
+            <a href="#servicos" class="btn-outline">
+              Ver serviços
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-right delay-2">
+          <div class="orbit-wrapper">
+            <div class="orbit-ring ring1"></div>
+            <div class="orbit-ring ring2"></div>
+
+            <div class="orbit-center">
+              <div class="orbit-center-icon">⚡</div>
+              <div class="orbit-center-text">Dumas.Tech</div>
+            </div>
+
+            <div class="orbit-satellite sat1" title="Mobile">📱</div>
+            <div class="orbit-satellite sat2" title="IA">🤖</div>
+            <div class="orbit-satellite sat3" title="Experiência">📡</div>
+            <div class="orbit-satellite sat4" title="Web">🌐</div>
+            <div class="orbit-satellite sat5" title="Performance">⚡</div>
+            <div class="orbit-satellite sat6" title="Segurança">🔒</div>
+          </div>
+
+          <div class="hero-counters">
+            <div class="counter-pill">
+              <span class="num" data-target="10">0</span>
+              <span class="lbl">+ Anos</span>
+            </div>
+            <div class="counter-pill">
+              <span class="num" data-text="Mobile">0</span>
+              <span class="lbl">Especialistas</span>
+            </div>
+            <div class="counter-pill">
+              <span class="num" data-text="∞">0</span>
+              <span class="lbl">Segmentos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-strip">
+      <div class="marquee-track" id="marquee">
+        <div class="marquee-item">
+          <span>10+ anos de experiência</span>
+          <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Apps Mobile</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Instituições Financeiras</span>
+          <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Grandes Organizações</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Setor Público</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Startups</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>10+ anos de experiência</span>
+          <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Apps Mobile</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Instituições Financeiras</span>
+          <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Grandes Organizações</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Setor Público</span> <span class="marquee-sep">—</span>
+        </div>
+        <div class="marquee-item">
+          <span>Startups</span> <span class="marquee-sep">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="servicos">
+      <div class="container">
+        <div class="services-top">
+          <div class="reveal-left">
+            <div class="sec-label">O que fazemos</div>
+            <h2 class="sec-title">
+              NOSSOS<br /><span class="acc">SERVIÇOS</span>
+            </h2>
+          </div>
+          <p class="sec-sub reveal-right" style="max-width: 380px">
+            Mais de 10 anos entregando soluções de diferentes portes e
+            complexidade.
+          </p>
+        </div>
+
+        <div class="services-list">
+          <div class="service-row reveal delay-1">
+            <div class="service-num">01</div>
+            <div class="service-sep"></div>
+            <div class="service-body">
+              <div>
+                <h3>Aplicações Mobile</h3>
+                <p>
+                  Desenvolvemos aplicativos para Android e iOS a partir da ideia
+                  do cliente, independentemente do segmento. Cada aplicação é
+                  construída conforme a necessidade real do projeto, podendo
+                  operar online, offline ou de forma híbrida. Nossa
+                  especialização está em aplicações robustas, seguras e
+                  escaláveis, utilizadas por startups, bancos, grandes
+                  organizações e instituições públicas.
+                </p>
+                <div class="service-tags">
+                  <span class="s-tag">iOS</span>
+                  <span class="s-tag">Android</span>
+                  <span class="s-tag">Arquitetura</span>
+                  <span class="s-tag">Segurança</span>
+                </div>
+              </div>
+              <div class="service-icon-right">📱</div>
+            </div>
+          </div>
+
+          <div class="service-row reveal delay-2">
+            <div class="service-num">02</div>
+            <div class="service-sep"></div>
+            <div class="service-body">
+              <div>
+                <h3>Soluções Complexas e de Grande Porte</h3>
+                <p>
+                  Criamos todos os tipos de sites: institucionais, corporativos,
+                  landing pages, portais e sistemas web. Os sites podem ser
+                  projetos independentes ou parte de um ecossistema maior
+                  integrado a aplicações mobile.
+                </p>
+                <div class="service-tags">
+                  <span class="s-tag">Enterprise</span>
+                  <span class="s-tag">Integrações</span>
+                  <span class="s-tag">Segurança</span>
+                </div>
+              </div>
+              <div class="service-icon-right">⚡</div>
+            </div>
+          </div>
+
+          <div class="service-row reveal delay-3">
+            <div class="service-num">03</div>
+            <div class="service-sep"></div>
+            <div class="service-body">
+              <div>
+                <h3>Inteligência Artificial</h3>
+                <p>
+                  IA aplicada com critério: atendimento automatizado, análise de
+                  dados, recomendações personalizadas e automação de processos
+                  quando faz sentido.
+                </p>
+                <div class="service-tags">
+                  <span class="s-tag">GPT / Claude</span>
+                  <span class="s-tag">Vision AI</span>
+                  <span class="s-tag">NLP</span>
+                  <span class="s-tag">Automação</span>
+                </div>
+              </div>
+              <div class="service-icon-right">🤖</div>
+            </div>
+          </div>
+
+          <div class="service-row reveal delay-4">
+            <div class="service-num">04</div>
+            <div class="service-sep"></div>
+            <div class="service-body">
+              <div>
+                <h3>Sites e Plataformas Web</h3>
+                <p>
+                  Sites institucionais, landing pages e sistemas web que
+                  complementam aplicações mobile quando o projeto exige presença
+                  multicanal. Desenvolvimento profissional, responsivo e
+                  otimizado.
+                </p>
+                <div class="service-tags">
+                  <span class="s-tag">Sites</span>
+                  <span class="s-tag">Landing Pages</span>
+                  <span class="s-tag">SEO</span>
+                </div>
+              </div>
+              <div class="service-icon-right">🌐</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossa Abordagem -->
+    <section id="abordagem">
+      <div class="container">
+        <div class="offline-inner">
+          <div class="reveal-left">
+            <div class="sec-label">Experiência e histórico</div>
+            <div class="big-statement">
+              MAIS DE<br />
+              <span class="glow">10 ANOS</span><br />
+              <span class="stroke">EM PRODUTOS DIGITAIS</span>
+            </div>
+            <p class="sec-sub">
+              Pegamos a ideia do cliente e transformamos em um produto digital
+              funcional, escalável e alinhado ao objetivo do negócio. Ao longo
+              de mais de 10 anos, a Dumas.Tech construiu aplicações para
+              startups, bancos, grandes organizações e instituições do setor
+              público.
+            </p>
+
+            <p class="sec-sub" style="margin-top: 1rem">
+              Desenvolvemos aplicações mobile como principal especialidade, além
+              de sites e plataformas web quando o projeto exige. Cada decisão
+              técnica é tomada com base no contexto real de uso do produto e na
+              necessidade do público final.
+            </p>
+            <div
+              style="
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+              "
+            >
+              <div class="offline-badge ob-blue">Startups</div>
+              <div class="offline-badge ob-green">Instituições financeiras</div>
+              <div class="offline-badge ob-purple">Grandes organizações</div>
+              <div class="offline-badge ob-blue">Setor público</div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="offline-diagram">
+              <div class="sync-flow">
+                <div class="sync-node">
+                  <div class="sn-icon sn-offline">📱</div>
+                  <div class="sn-text">
+                    <strong>Especialização em mobile</strong>
+                    <span
+                      >Aplicações mobile são nosso principal foco de
+                      atuação</span
+                    >
+                  </div>
+                </div>
+                <div class="sync-arrow">▼</div>
+                <div class="sync-node">
+                  <div class="sn-icon sn-queue">🏛️</div>
+                  <div class="sn-text">
+                    <strong>Projetos de diferentes portes</strong>
+                    <span
+                      >De startups a instituições com requisitos de alta
+                      complexidade</span
+                    >
+                  </div>
+                </div>
+                <div class="sync-arrow">▼</div>
+                <div class="sync-node">
+                  <div class="sn-icon sn-sync">⚙️</div>
+                  <div class="sn-text">
+                    <strong>Decisões baseadas em prática</strong>
+                    <span
+                      >Anos de experiência em projetos reais de diferentes
+                      segmentos</span
+                    >
+                  </div>
+                </div>
+
+                <div class="offline-badge-row">
+                  <div class="offline-badge ob-green">Soluções complexas</div>
+                  <div class="offline-badge ob-blue">
+                    Requisitos de segurança
+                  </div>
+                  <div class="offline-badge ob-purple">
+                    Projetos de grande escala
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Section -->
+    <section id="ia">
+      <div class="container">
+        <div class="ai-inner">
+          <div class="reveal-left">
+            <div class="sec-label">Inteligência Artificial</div>
+            <h2 class="sec-title">
+              IA COM<br /><span class="acc">PROPÓSITO</span>
+            </h2>
+            <p class="sec-sub">
+              Integramos inteligência artificial em aplicações mobile e web
+              quando gera valor concreto. Atendimento automatizado, análise de
+              dados e automação de processos — sempre com critério técnico e
+              foco no resultado para o negócio.
+            </p>
+            <div class="ai-badge-large" style="margin-top: 2rem">
+              <p>
+                Da <strong>automação de atendimento</strong> à
+                <strong>análise preditiva</strong>, da
+                <strong>visão computacional</strong> ao
+                <strong>processamento de linguagem</strong> — implementamos IA
+                quando ela faz sentido para o seu negócio.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/5511963501236?text=Quero%20saber%20mais%20sobre%20IA%20no%20meu%20projeto."
+              class="btn-outline"
+              target="_blank"
+              style="display: inline-flex; margin-top: 2rem"
+            >
+              Conversar sobre IA no meu projeto
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="ai-grid reveal-right">
+            <div class="ai-card delay-1">
+              <div class="ai-card-icon">💬</div>
+              <h4>Atendimento Automatizado</h4>
+              <p>
+                Chatbots e assistentes que respondem demandas comuns e
+                direcionam casos mais complexos.
+              </p>
+            </div>
+            <div class="ai-card delay-2">
+              <div class="ai-card-icon">📊</div>
+              <h4>Análise de Dados</h4>
+              <p>
+                Insights automáticos para antecipar tendências e apoiar
+                decisões.
+              </p>
+            </div>
+            <div class="ai-card delay-3">
+              <div class="ai-card-icon">🎯</div>
+              <h4>Recomendações</h4>
+              <p>
+                Personalização de experiências com base no comportamento do
+                usuário.
+              </p>
+            </div>
+            <div class="ai-card delay-4">
+              <div class="ai-card-icon">⚙️</div>
+              <h4>Automação</h4>
+              <p>
+                Tarefas repetitivas automatizadas para ganhar escala e
+                eficiência.
+              </p>
+            </div>
+            <div class="ai-card delay-1">
+              <div class="ai-card-icon">👁️</div>
+              <h4>Visão e Leitura</h4>
+              <p>
+                Reconhecimento de imagens, leitura de documentos e inspeção
+                visual.
+              </p>
+            </div>
+            <div class="ai-card delay-2">
+              <div class="ai-card-icon">🧠</div>
+              <h4>Processamento de Texto</h4>
+              <p>
+                Extração, categorização e análise de textos em larga escala.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-block reveal delay-1">
+            <div class="big-num">10+</div>
+            <div class="big-label">Anos de experiência</div>
+          </div>
+          <div class="stat-block reveal delay-2">
+            <div class="big-num">Mobile</div>
+            <div class="big-label">Especialistas</div>
+          </div>
+          <div class="stat-block reveal delay-3">
+            <div class="big-num">Complexos</div>
+            <div class="big-label">Projetos entregues</div>
+          </div>
+          <div class="stat-block reveal delay-4">
+            <div class="big-num">∞</div>
+            <div class="big-label">Segmentos atendidos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais">
+      <div class="container">
+        <div class="diff-title-row">
+          <div class="reveal-left">
+            <div class="sec-label">Por que a Dumas.Tech</div>
+            <h2 class="sec-title">
+              NOSSOS<br /><span class="acc">DIFERENCIAIS</span>
+            </h2>
+          </div>
+          <p class="sec-sub reveal-right" style="max-width: 360px">
+            Experiência construída em projetos reais de diferentes
+            complexidades.
+          </p>
+        </div>
+
+        <div class="diff-grid reveal">
+          <div class="diff-item">
+            <div class="diff-n">01</div>
+            <span class="diff-emoji">📱</span>
+            <h3>Especialização em Mobile</h3>
+            <p>
+              Aplicações mobile são nossa principal atuação, não um serviço
+              secundário. Expertise consolidada em projetos nativos para iOS e
+              Android.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">02</div>
+            <span class="diff-emoji">🏗️</span>
+            <h3>Arquitetura e Escalabilidade</h3>
+            <p>
+              Projetamos para crescimento e para requisitos de alta
+              complexidade. Código organizado, documentado e preparado para
+              evoluir.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">03</div>
+            <span class="diff-emoji">📡</span>
+            <h3>Experiência em Diferentes Segmentos</h3>
+            <p>
+              Trajetória com startups, instituições financeiras, grandes
+              organizações e setor público. Decisões técnicas baseadas em anos
+              de prática.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">04</div>
+            <span class="diff-emoji">🎨</span>
+            <h3>UX e Design</h3>
+            <p>
+              Interfaces claras e intuitivas. Foco em usabilidade e em
+              experiências que convertem.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">05</div>
+            <span class="diff-emoji">🔒</span>
+            <h3>Requisitos Técnicos e de Segurança</h3>
+            <p>
+              Experiência em projetos com exigências elevadas de segurança e
+              conformidade. Boas práticas aplicadas desde o início.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">06</div>
+            <span class="diff-emoji">🤝</span>
+            <h3>Atendimento Consultivo</h3>
+            <p>
+              Parceria próxima e orientada a resultados. Cada decisão técnica
+              considera o impacto real no seu negócio.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">07</div>
+            <span class="diff-emoji">🧩</span>
+            <h3>Produtos Sob Medida</h3>
+            <p>
+              Não trabalhamos com soluções genéricas. Cada projeto nasce a
+              partir da ideia do cliente e é desenvolvido de forma
+              personalizada.
+            </p>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-n">08</div>
+            <span class="diff-emoji">🏷️</span>
+            <h3>White Label e Franquias</h3>
+            <p>
+              Experiência na criação de aplicativos white label e produtos
+              digitais pensados para escalar como modelo de negócio.
+            </p>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-n">09</div>
+            <span class="diff-emoji">🤖</span>
+            <h3>Integração com Inteligência Artificial</h3>
+            <p>
+              IA aplicada em diferentes idiomas, automação, análise de dados e
+              funcionalidades inteligentes quando gera valor real.
+            </p>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-n">10</div>
+            <span class="diff-emoji">🚀</span>
+            <h3>Experiência Comprovada</h3>
+            <p>
+              Mais de uma década entregando soluções reais para diferentes
+              setores, com foco em qualidade, segurança e resultado.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">11</div>
+            <span class="diff-emoji">🧠</span>
+            <h3>Governança Técnica e Qualidade</h3>
+            <p>
+              Aplicamos padrões de arquitetura, versionamento e revisão de
+              código que garantem qualidade, manutenibilidade e evolução
+              contínua do produto ao longo do tempo.
+            </p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-n">12</div>
+            <span class="diff-emoji">🌍</span>
+            <h3>Foco no Contexto Real de Uso</h3>
+            <p>
+              Projetamos aplicações considerando o ambiente onde serão
+              utilizadas — conectividade, perfil do usuário, escala e operação —
+              garantindo soluções funcionais na prática, não apenas no papel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <div class="cta-band">
+      <div class="container" style="position: relative; z-index: 1">
+        <div class="reveal">
+          <h2 class="glitch" data-text="INICIE SEU PROJETO">
+            INICIE SEU PROJETO
+          </h2>
+          <p>Resposta rápida. Atendimento consultivo. Sem compromisso.</p>
+          <a
+            href="https://wa.me/5511963501236?text=Olá!%20Quero%20conversar%20sobre%20um%20projeto%20de%20aplicativo%20ou%20solução%20digital."
+            class="btn-wa"
+            target="_blank"
+            style="display: inline-flex; font-size: 1.05rem; padding: 18px 40px"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            Falar no WhatsApp agora
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-l reveal-left">
+            <div class="sec-label">Contato</div>
+            <h2 class="sec-title">
+              VAMOS<br /><span class="acc">CONSTRUIR</span><br />JUNTOS
+            </h2>
+            <p class="sec-sub" style="margin-top: 1rem">
+              Descreva seu projeto e retornamos com uma análise personalizada.
+              Resposta rápida e objetiva.
+            </p>
+
+            <div class="contact-items">
+              <a href="https://wa.me/5511963501236" class="ci" target="_blank">
+                <div class="ci-icon ci-wa">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="#25D366"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    />
+                  </svg>
+                </div>
+                <div class="ci-text">
+                  <strong>WhatsApp</strong>
+                  <span>+55 11 95236-5724</span>
+                </div>
+              </a>
+
+              <a href="tel:+5511963501236" class="ci">
+                <div class="ci-icon ci-tel">📞</div>
+                <div class="ci-text">
+                  <strong>Telefone</strong>
+                  <span>+55 11 95236-5724</span>
+                </div>
+              </a>
+
+              <a href="mailto:venancio.devone@gmail.com" class="ci">
+                <div class="ci-icon ci-mail">✉️</div>
+                <div class="ci-text">
+                  <strong>E-mail</strong>
+                  <span>venancio.devone@gmail.com</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-box reveal-right">
+            <div class="cf-title">Solicitar Orçamento</div>
+
+            <div class="fg-row">
+              <div class="fg">
+                <label>Nome</label>
+                <input
+                  type="text"
+                  id="cf-name"
+                  placeholder="Seu nome completo"
+                />
+              </div>
+              <div class="fg">
+                <label>WhatsApp</label>
+                <input
+                  type="tel"
+                  id="cf-phone"
+                  placeholder="+55 (11) 99999-9999"
+                />
+              </div>
+            </div>
+
+            <div class="fg">
+              <label>E-mail</label>
+              <input type="email" id="cf-email" placeholder="seu@email.com" />
+            </div>
+
+            <div class="fg">
+              <label>Tipo de projeto</label>
+              <select id="cf-type">
+                <option value="">Selecione o tipo de projeto...</option>
+                <option>Aplicação Mobile (iOS e/ou Android)</option>
+                <option>Sistema ou plataforma complexa</option>
+                <option>Site Institucional / Landing Page</option>
+                <option>Projeto com Inteligência Artificial</option>
+                <option>E-commerce</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+            <div class="fg">
+              <label>Descrição do projeto</label>
+              <textarea
+                id="cf-msg"
+                placeholder="Descreva brevemente o que você precisa..."
+              ></textarea>
+            </div>
+
+            <button class="btn-submit" onclick="sendForm()">
+              Enviar pelo WhatsApp →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <a href="#home" class="logo" style="margin-bottom: 6px">
+            <div class="logo-mark">⚡</div>
+            Dumas<em>Tech</em>
+          </a>
+          <p class="footer-copy" style="margin-top: 8px">
+            © 2025 Dumas.Tech Studio. <em>Todos os direitos reservados.</em>
+          </p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#abordagem">Nossa Abordagem</a></li>
+          <li><a href="#ia">IA</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- WA Float -->
+    <a
+      href="https://wa.me/5511963501236?text=Olá!%20Vim%20pelo%20site%20da%20Dumas.Tech%20e%20quero%20conversar%20sobre%20um%20projeto."
+      class="wa-float"
+      target="_blank"
+      title="Falar no WhatsApp"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
