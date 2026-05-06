@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Política de Privacidade — Dumas.Tech. Saiba como coletamos, usamos e protegemos seus dados pessoais em nossos aplicativos e serviços."
+    />
+    <title>Política de Privacidade — Dumas.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* ─── Estilos específicos desta página ─── */
+      .pp-hero {
+        padding: 140px 0 60px;
+        text-align: center;
+        position: relative;
+      }
+      .pp-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%; transform: translateX(-50%);
+        width: 600px; height: 400px;
+        background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .pp-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(59,130,246,0.08);
+        border: 1px solid rgba(59,130,246,0.25);
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--blue2);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+      }
+      .pp-badge span {
+        width: 6px; height: 6px;
+        background: var(--cyan);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 8px var(--cyan);
+      }
+      .pp-hero h1 {
+        font-family: var(--heading-font);
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 1;
+        letter-spacing: 0.02em;
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+      .pp-hero h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, var(--blue2), var(--cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .pp-hero p {
+        color: var(--text2);
+        font-size: 1rem;
+        max-width: 560px;
+        margin: 0 auto 12px;
+        line-height: 1.7;
+      }
+      .pp-meta {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text3);
+        margin-top: 8px;
+      }
+
+      /* ─── Layout principal ─── */
+      .pp-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        padding-bottom: 100px;
+        align-items: start;
+      }
+
+      /* ─── Sumário lateral ─── */
+      .pp-toc {
+        position: sticky;
+        top: 100px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .pp-toc-title {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text3);
+        margin-bottom: 16px;
+      }
+      .pp-toc a {
+        display: block;
+        font-size: 0.82rem;
+        color: var(--text2);
+        text-decoration: none;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--border);
+        transition: color 0.2s;
+        line-height: 1.4;
+      }
+      .pp-toc a:last-child { border-bottom: none; }
+      .pp-toc a:hover { color: var(--cyan); }
+
+      /* ─── Conteúdo ─── */
+      .pp-content section {
+        margin-bottom: 56px;
+        scroll-margin-top: 100px;
+      }
+      .pp-content h2 {
+        font-family: var(--heading-font);
+        font-size: 1.9rem;
+        letter-spacing: 0.03em;
+        color: var(--white);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .pp-content h2 .section-num {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--cyan);
+        background: rgba(34,211,238,0.08);
+        border: 1px solid rgba(34,211,238,0.2);
+        border-radius: 6px;
+        padding: 3px 8px;
+        flex-shrink: 0;
+      }
+      .pp-content p {
+        color: var(--text2);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+      }
+      .pp-content ul {
+        list-style: none;
+        margin: 12px 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .pp-content ul li {
+        color: var(--text2);
+        font-size: 0.93rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        position: relative;
+      }
+      .pp-content ul li::before {
+        content: '›';
+        position: absolute;
+        left: 0;
+        color: var(--cyan);
+        font-weight: 700;
+      }
+      .pp-divider {
+        height: 1px;
+        background: var(--border);
+        margin-bottom: 56px;
+      }
+
+      /* ─── Cards de destaque ─── */
+      .pp-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px 24px;
+        margin: 20px 0;
+      }
+      .pp-card-title {
+        font-size: 0.78rem;
+        font-family: var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue2);
+        margin-bottom: 10px;
+      }
+      .pp-card p {
+        margin-bottom: 0;
+      }
+
+      /* ─── Contato destaque ─── */
+      .pp-contact-box {
+        background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(34,211,238,0.05));
+        border: 1px solid rgba(59,130,246,0.25);
+        border-radius: 16px;
+        padding: 28px;
+        margin-top: 16px;
+      }
+      .pp-contact-box a {
+        color: var(--cyan);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .pp-contact-box a:hover { text-decoration: underline; }
+
+      /* ─── Responsivo ─── */
+      @media (max-width: 768px) {
+        .pp-layout {
+          grid-template-columns: 1fr;
+        }
+        .pp-toc {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Nav -->
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">V</div>
+        Dumas<em>Tech</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#abordagem">Nossa Abordagem</a></li>
+        <li><a href="index.html#ia">IA</a></li>
+        <li><a href="index.html#diferenciais">Diferenciais</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+      <a
+        href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento."
+        class="nav-wa"
+        target="_blank"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        WhatsApp
+      </a>
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Hero -->
+    <div class="pp-hero">
+      <div class="container">
+        <div class="pp-badge"><span></span> Documento legal</div>
+        <h1>Política de<br /><em>Privacidade</em></h1>
+        <p>Como coletamos, usamos e protegemos suas informações nos aplicativos e serviços desenvolvidos pela Dumas.Tech.</p>
+        <p class="pp-meta">Última atualização: 06 de maio de 2026</p>
+      </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+      <div class="pp-layout">
+
+        <!-- Sumário lateral -->
+        <aside class="pp-toc">
+          <div class="pp-toc-title">Sumário</div>
+          <a href="#sec1">1. Quem somos</a>
+          <a href="#sec2">2. Dados coletados</a>
+          <a href="#sec3">3. Como usamos</a>
+          <a href="#sec4">4. Compartilhamento</a>
+          <a href="#sec5">5. Armazenamento</a>
+          <a href="#sec6">6. Seus direitos</a>
+          <a href="#sec7">7. Crianças</a>
+          <a href="#sec8">8. Segurança</a>
+          <a href="#sec9">9. Links externos</a>
+          <a href="#sec10">10. Alterações</a>
+          <a href="#sec11">11. Contato</a>
+        </aside>
+
+        <!-- Texto da política -->
+        <div class="pp-content">
+
+          <section id="sec1">
+            <h2><span class="section-num">01</span> Quem somos</h2>
+            <p>
+              A <strong style="color:var(--white)">Dumas.Tech</strong> é uma empresa especializada no desenvolvimento de aplicativos móveis, sites e soluções digitais sob medida. Esta Política de Privacidade se aplica a todos os aplicativos, plataformas e serviços criados e operados por nós.
+            </p>
+            <p>
+              Ao utilizar qualquer aplicativo ou serviço da Dumas.Tech, você concorda com os termos desta política. Recomendamos a leitura completa antes de usar nossos produtos.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec2">
+            <h2><span class="section-num">02</span> Dados que coletamos</h2>
+            <p>Dependendo do aplicativo e das funcionalidades utilizadas, podemos coletar as seguintes categorias de informações:</p>
+
+            <div class="pp-card">
+              <div class="pp-card-title">Dados fornecidos por você</div>
+              <ul>
+                <li>Nome, e-mail e telefone informados em cadastros ou formulários</li>
+                <li>Informações de perfil, como foto e preferências</li>
+                <li>Mensagens e conteúdos enviados pelo aplicativo</li>
+                <li>Dados de pagamento, processados por intermediários certificados (nunca armazenamos números de cartão)</li>
+              </ul>
+            </div>
+
+            <div class="pp-card">
+              <div class="pp-card-title">Dados coletados automaticamente</div>
+              <ul>
+                <li>Identificador de dispositivo (Device ID) e modelo do aparelho</li>
+                <li>Sistema operacional e versão do aplicativo</li>
+                <li>Endereço IP e dados de rede</li>
+                <li>Logs de uso, erros e desempenho</li>
+                <li>Dados de localização aproximada (somente se você autorizar)</li>
+              </ul>
+            </div>
+
+            <div class="pp-card">
+              <div class="pp-card-title">Dados de terceiros</div>
+              <ul>
+                <li>Informações de login social (Google, Facebook), quando utilizadas</li>
+                <li>Dados analíticos agregados de plataformas como Firebase ou similar</li>
+              </ul>
+            </div>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec3">
+            <h2><span class="section-num">03</span> Como usamos seus dados</h2>
+            <p>Utilizamos as informações coletadas para as seguintes finalidades:</p>
+            <ul>
+              <li>Fornecer, operar e melhorar nossos aplicativos e serviços</li>
+              <li>Personalizar a experiência do usuário</li>
+              <li>Enviar notificações relevantes ao uso (push notifications), caso autorizadas</li>
+              <li>Responder a solicitações de suporte e atendimento</li>
+              <li>Garantir a segurança e prevenir fraudes</li>
+              <li>Cumprir obrigações legais e regulatórias</li>
+              <li>Realizar análises de desempenho e métricas de uso para melhoria contínua</li>
+            </ul>
+            <p>
+              Não utilizamos seus dados para fins de marketing de terceiros sem seu consentimento explícito.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec4">
+            <h2><span class="section-num">04</span> Compartilhamento de dados</h2>
+            <p>A Dumas.Tech <strong style="color:var(--white)">não vende</strong> seus dados pessoais. Podemos compartilhá-los apenas nas seguintes situações:</p>
+            <ul>
+              <li><strong style="color:var(--text)">Prestadores de serviço:</strong> empresas que nos auxiliam na operação dos aplicativos (hospedagem, analytics, processamento de pagamentos), sob acordos de confidencialidade</li>
+              <li><strong style="color:var(--text)">Obrigação legal:</strong> quando exigido por lei, ordem judicial ou autoridade competente</li>
+              <li><strong style="color:var(--text)">Proteção de direitos:</strong> para proteger os direitos, propriedade ou segurança da Dumas.Tech e de nossos usuários</li>
+              <li><strong style="color:var(--text)">Com seu consentimento:</strong> em qualquer outra situação, somente após sua autorização expressa</li>
+            </ul>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec5">
+            <h2><span class="section-num">05</span> Armazenamento e retenção</h2>
+            <p>
+              Seus dados são armazenados em servidores seguros, podendo estar localizados no Brasil ou em outros países com nível adequado de proteção de dados.
+            </p>
+            <p>
+              Mantemos suas informações pelo tempo necessário para a prestação dos serviços ou pelo prazo exigido por lei. Após esse período, os dados são excluídos ou anonimizados de forma segura.
+            </p>
+            <div class="pp-card">
+              <div class="pp-card-title">Prazo de retenção padrão</div>
+              <p>
+                Dados de conta: enquanto a conta estiver ativa + 90 dias após exclusão.<br />
+                Logs e diagnósticos: até 12 meses.<br />
+                Dados financeiros: conforme exigido pela legislação fiscal brasileira (5 anos).
+              </p>
+            </div>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec6">
+            <h2><span class="section-num">06</span> Seus direitos</h2>
+            <p>
+              Nos termos da Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), você possui os seguintes direitos em relação aos seus dados pessoais:
+            </p>
+            <ul>
+              <li><strong style="color:var(--text)">Acesso:</strong> solicitar informações sobre quais dados possuímos sobre você</li>
+              <li><strong style="color:var(--text)">Correção:</strong> corrigir dados incompletos, inexatos ou desatualizados</li>
+              <li><strong style="color:var(--text)">Exclusão:</strong> solicitar a eliminação dos dados desnecessários ou tratados em desconformidade</li>
+              <li><strong style="color:var(--text)">Portabilidade:</strong> receber seus dados em formato estruturado e legível</li>
+              <li><strong style="color:var(--text)">Oposição:</strong> opor-se ao tratamento realizado com fundamento em legítimo interesse</li>
+              <li><strong style="color:var(--text)">Revogação do consentimento:</strong> retirar sua autorização a qualquer momento</li>
+            </ul>
+            <p>Para exercer qualquer um desses direitos, entre em contato conosco pelo e-mail indicado na seção 11.</p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec7">
+            <h2><span class="section-num">07</span> Crianças e adolescentes</h2>
+            <p>
+              Nossos serviços são destinados a pessoas com 13 anos ou mais. Não coletamos intencionalmente dados de crianças menores de 13 anos.
+            </p>
+            <p>
+              Caso identificarmos que dados de uma criança foram coletados sem o consentimento dos responsáveis, excluiremos essas informações imediatamente. Se você acredita que isso ocorreu, entre em contato conosco.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec8">
+            <h2><span class="section-num">08</span> Segurança da informação</h2>
+            <p>
+              Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não autorizado, perda, alteração ou divulgação indevida. Isso inclui:
+            </p>
+            <ul>
+              <li>Comunicação via HTTPS/TLS em todas as transmissões de dados</li>
+              <li>Armazenamento de senhas com criptografia hash (bcrypt ou similar)</li>
+              <li>Controle de acesso restrito internamente</li>
+              <li>Monitoramento contínuo de vulnerabilidades</li>
+            </ul>
+            <p>
+              Nenhum sistema é 100% inviolável. Em caso de incidente de segurança que afete seus dados, notificaremos você e a ANPD conforme exigido por lei.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec9">
+            <h2><span class="section-num">09</span> Links externos</h2>
+            <p>
+              Nossos aplicativos podem conter links para sites ou serviços de terceiros. Esta política não se aplica a esses serviços externos. Recomendamos que você leia as políticas de privacidade de qualquer site ou aplicativo de terceiros que acessar.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec10">
+            <h2><span class="section-num">10</span> Alterações nesta política</h2>
+            <p>
+              Podemos atualizar esta Política de Privacidade periodicamente. Quando realizarmos alterações relevantes, notificaremos você por meio do próprio aplicativo ou por e-mail.
+            </p>
+            <p>
+              A data da última atualização sempre estará indicada no topo desta página. O uso continuado dos nossos serviços após a publicação de alterações constitui sua aceitação da política revisada.
+            </p>
+          </section>
+          <div class="pp-divider"></div>
+
+          <section id="sec11">
+            <h2><span class="section-num">11</span> Fale conosco</h2>
+            <p>
+              Para dúvidas, solicitações de titulares ou informações sobre esta política, entre em contato:
+            </p>
+            <div class="pp-contact-box">
+              <p><strong style="color:var(--white)">Dumas.Tech</strong></p>
+              <p>E-mail: <a href="mailto:contato@dumas.tech">contato@dumas.tech</a></p>
+              <p>WhatsApp: <a href="https://wa.me/5511952365724" target="_blank">+55 (11) 95236-5724</a></p>
+              <p>Site: <a href="https://dumas.tech" target="_blank">dumas.tech</a></p>
+              <br />
+              <p style="font-size:0.85rem; color:var(--text3);">
+                Encarregado de Dados (DPO): disponível mediante solicitação pelo e-mail acima.
+              </p>
+            </div>
+          </section>
+
+        </div><!-- /pp-content -->
+      </div><!-- /pp-layout -->
+    </div><!-- /container -->
+
+    <!-- Footer simples -->
+    <footer style="border-top: 1px solid var(--border); padding: 32px 0; text-align:center;">
+      <div class="container">
+        <p style="color:var(--text3); font-size:0.82rem;">
+          © 2026 Dumas.Tech — Todos os direitos reservados.
+          &nbsp;|&nbsp;
+          <a href="politica-de-privacidade.html" style="color:var(--text2); text-decoration:none;">Política de Privacidade</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
