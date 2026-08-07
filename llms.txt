@@ -1,0 +1,25 @@
+# Dumas.Tech
+
+> Estúdio de desenvolvimento de produtos digitais com mais de 10 anos de experiência, especializado em aplicações mobile (iOS e Android), sites, plataformas web e soluções com inteligência artificial. Atende startups, instituições financeiras, grandes organizações e o setor público.
+
+Dumas.Tech transforma a ideia do cliente em um produto digital funcional, escalável e alinhado ao objetivo do negócio. A principal especialidade são aplicações mobile robustas, seguras e escaláveis — operando online, offline ou de forma híbrida — além de sites, sistemas complexos, produtos white label e integrações com IA. As decisões técnicas são tomadas com base no contexto real de uso do produto.
+
+## Serviços
+
+- [Aplicações Mobile](https://venanciokranvoski.github.io/#servicos): Apps nativos para Android e iOS, construídos conforme a necessidade do projeto. Podem operar online, offline ou híbridos. Foco em arquitetura, segurança e escalabilidade.
+- [Soluções Complexas e de Grande Porte](https://venanciokranvoski.github.io/#servicos): Sistemas web, portais e plataformas enterprise, com integrações e requisitos elevados de segurança.
+- [Inteligência Artificial](https://venanciokranvoski.github.io/#ia): IA aplicada com critério — atendimento automatizado, análise de dados, recomendações personalizadas, visão computacional, processamento de linguagem e automação de processos.
+- [Sites e Plataformas Web](https://venanciokranvoski.github.io/#servicos): Sites institucionais, landing pages e sistemas web responsivos e otimizados, que complementam aplicações mobile.
+
+## Diferenciais
+
+- [Especialização em Mobile](https://venanciokranvoski.github.io/#diferenciais): Aplicações mobile como principal atuação, com expertise consolidada em iOS e Android.
+- [Arquitetura e Escalabilidade](https://venanciokranvoski.github.io/#diferenciais): Projetos preparados para crescimento, com código organizado, documentado e governança técnica.
+- [Experiência em Diferentes Segmentos](https://venanciokranvoski.github.io/#diferenciais): Trajetória com startups, instituições financeiras, grandes organizações e setor público.
+- [Segurança e Conformidade](https://venanciokranvoski.github.io/#diferenciais): Experiência em projetos com exigências elevadas de segurança, boas práticas desde o início.
+- [Produtos Sob Medida e White Label](https://venanciokranvoski.github.io/#diferenciais): Soluções personalizadas e produtos white label pensados para escalar como modelo de negócio.
+
+## Contato
+
+- [WhatsApp](https://wa.me/5511952365724): +55 11 95236-5724 — canal principal para orçamentos e atendimento consultivo.
+- [Telefone](tel:+5511952365724): +55 11 95236-5724
