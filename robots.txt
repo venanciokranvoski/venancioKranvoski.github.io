@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://dumastech.com.br/sitemap.xml
+Sitemap: https://dumastech.com.br/sitemap.txt
