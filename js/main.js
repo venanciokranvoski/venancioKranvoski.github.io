@@ -239,6 +239,144 @@ function sendForm() {
 }
 window.sendForm = sendForm;
 
+/* ─── Seletor de Idioma (PT / EN / ES) ─── */
+const I18N = {
+  pt: {
+    'nav.servicos': 'Serviços',
+    'nav.abordagem': 'Nossa Abordagem',
+    'nav.ia': 'IA',
+    'nav.diferenciais': 'Diferenciais',
+    'nav.faq': 'FAQ',
+    'nav.contato': 'Contato',
+    'nav.wa': 'WhatsApp',
+    'hero.eyebrow': 'Dumas.Tech — Mais de 10 anos em produtos digitais',
+    'hero.l1': 'APLICAÇÕES',
+    'hero.l2': 'MOBILE',
+    'hero.l3': 'E SOLUÇÕES DIGITAIS',
+    'hero.sub': 'Transformamos ideias em produtos digitais sob medida. Há mais de 10 anos somos especialistas em desenvolvimento de aplicações mobile para Android e iOS, além de sites e plataformas web. Construímos soluções conforme a necessidade real de cada cliente — sejam aplicativos online, offline, híbridos, sistemas complexos, produtos white label ou plataformas com integração em inteligência artificial.',
+    'hero.cta_wa': 'Fale no WhatsApp',
+    'hero.cta_serv': 'Ver serviços',
+    'services.label': 'O que fazemos',
+    'services.title1': 'NOSSOS',
+    'services.title2': 'SERVIÇOS',
+    'faq.label': 'Dúvidas frequentes',
+    'faq.title1': 'PERGUNTAS',
+    'faq.title2': 'FREQUENTES',
+    'contact.label': 'Contato',
+    'contact.form_title': 'Solicitar Orçamento',
+    'contact.name': 'Nome',
+    'contact.phone': 'WhatsApp',
+    'contact.email': 'E-mail',
+    'contact.type': 'Tipo de projeto',
+    'contact.desc': 'Descrição do projeto',
+    'contact.submit': 'Enviar pelo WhatsApp →',
+    'contact.trust1': '⚡ Resposta rápida',
+    'contact.trust2': '🔒 Seus dados protegidos',
+    'contact.trust3': '✓ Sem compromisso',
+    'cookie.text': 'Usamos cookies e tecnologias de medição para melhorar sua experiência. Ao continuar navegando, você concorda com a nossa Política de Privacidade.',
+    'cookie.accept': 'Aceitar',
+    'cookie.decline': 'Recusar',
+  },
+  en: {
+    'nav.servicos': 'Services',
+    'nav.abordagem': 'Our Approach',
+    'nav.ia': 'AI',
+    'nav.diferenciais': 'Why Us',
+    'nav.faq': 'FAQ',
+    'nav.contato': 'Contact',
+    'nav.wa': 'WhatsApp',
+    'hero.eyebrow': 'Dumas.Tech — Over 10 years in digital products',
+    'hero.l1': 'MOBILE',
+    'hero.l2': 'APPS',
+    'hero.l3': 'AND DIGITAL SOLUTIONS',
+    'hero.sub': 'We turn ideas into custom digital products. For over 10 years we have specialized in mobile app development for Android and iOS, as well as websites and web platforms. We build solutions tailored to each client\'s real needs — whether online, offline or hybrid apps, complex systems, white label products or platforms with artificial intelligence integration.',
+    'hero.cta_wa': 'Chat on WhatsApp',
+    'hero.cta_serv': 'View services',
+    'services.label': 'What we do',
+    'services.title1': 'OUR',
+    'services.title2': 'SERVICES',
+    'faq.label': 'Frequently asked',
+    'faq.title1': 'FREQUENT',
+    'faq.title2': 'QUESTIONS',
+    'contact.label': 'Contact',
+    'contact.form_title': 'Request a Quote',
+    'contact.name': 'Name',
+    'contact.phone': 'WhatsApp',
+    'contact.email': 'E-mail',
+    'contact.type': 'Project type',
+    'contact.desc': 'Project description',
+    'contact.submit': 'Send via WhatsApp →',
+    'contact.trust1': '⚡ Fast response',
+    'contact.trust2': '🔒 Your data protected',
+    'contact.trust3': '✓ No commitment',
+    'cookie.text': 'We use cookies and measurement technologies to improve your experience. By continuing to browse, you agree to our Privacy Policy.',
+    'cookie.accept': 'Accept',
+    'cookie.decline': 'Decline',
+  },
+  es: {
+    'nav.servicos': 'Servicios',
+    'nav.abordagem': 'Nuestro Enfoque',
+    'nav.ia': 'IA',
+    'nav.diferenciais': 'Diferenciales',
+    'nav.faq': 'FAQ',
+    'nav.contato': 'Contacto',
+    'nav.wa': 'WhatsApp',
+    'hero.eyebrow': 'Dumas.Tech — Más de 10 años en productos digitales',
+    'hero.l1': 'APLICACIONES',
+    'hero.l2': 'MÓVILES',
+    'hero.l3': 'Y SOLUCIONES DIGITALES',
+    'hero.sub': 'Transformamos ideas en productos digitales a medida. Desde hace más de 10 años somos especialistas en desarrollo de aplicaciones móviles para Android e iOS, además de sitios web y plataformas web. Construimos soluciones según la necesidad real de cada cliente — ya sean aplicaciones online, offline, híbridas, sistemas complejos, productos white label o plataformas con integración de inteligencia artificial.',
+    'hero.cta_wa': 'Hablar por WhatsApp',
+    'hero.cta_serv': 'Ver servicios',
+    'services.label': 'Lo que hacemos',
+    'services.title1': 'NUESTROS',
+    'services.title2': 'SERVICIOS',
+    'faq.label': 'Preguntas frecuentes',
+    'faq.title1': 'PREGUNTAS',
+    'faq.title2': 'FRECUENTES',
+    'contact.label': 'Contacto',
+    'contact.form_title': 'Solicitar Presupuesto',
+    'contact.name': 'Nombre',
+    'contact.phone': 'WhatsApp',
+    'contact.email': 'Correo',
+    'contact.type': 'Tipo de proyecto',
+    'contact.desc': 'Descripción del proyecto',
+    'contact.submit': 'Enviar por WhatsApp →',
+    'contact.trust1': '⚡ Respuesta rápida',
+    'contact.trust2': '🔒 Tus datos protegidos',
+    'contact.trust3': '✓ Sin compromiso',
+    'cookie.text': 'Usamos cookies y tecnologías de medición para mejorar tu experiencia. Al continuar navegando, aceptas nuestra Política de Privacidad.',
+    'cookie.accept': 'Aceptar',
+    'cookie.decline': 'Rechazar',
+  },
+};
+
+function applyLanguage(lang) {
+  const dict = I18N[lang] || I18N.pt;
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  // Placeholders de inputs
+  document.querySelectorAll('[data-i18n-ph]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+  });
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+  localStorage.setItem('dumas_lang', lang);
+  // Atualiza estado visual dos botões
+  document.querySelectorAll('.lang-btn').forEach((b) => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+window.setLanguage = function (lang) { applyLanguage(lang); };
+
+// Aplica idioma salvo (ou PT por padrão) ao carregar
+(function initLanguage() {
+  const saved = localStorage.getItem('dumas_lang') || 'pt';
+  applyLanguage(saved);
+})();
+
 /* ─── Banner de Cookies / LGPD ─── */
 (function initCookieBanner() {
   const banner = document.getElementById('cookieBanner');

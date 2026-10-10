@@ -202,13 +202,18 @@
         Dumas<em>Tech</em>
       </a>
       <ul class="nav-links">
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#abordagem">Nossa Abordagem</a></li>
-        <li><a href="#ia">IA</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#servicos" data-i18n="nav.servicos">Serviços</a></li>
+        <li><a href="#abordagem" data-i18n="nav.abordagem">Nossa Abordagem</a></li>
+        <li><a href="#ia" data-i18n="nav.ia">IA</a></li>
+        <li><a href="#diferenciais" data-i18n="nav.diferenciais">Diferenciais</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
       </ul>
+      <div class="lang-switcher" role="group" aria-label="Selecionar idioma">
+        <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')" title="Português">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español">ES</button>
+      </div>
       <a
         href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento."
         class="nav-wa"
@@ -229,13 +234,18 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
-        <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
-        <li><a href="#abordagem" onclick="closeMenu()">Nossa Abordagem</a></li>
-        <li><a href="#ia" onclick="closeMenu()">Inteligência Artificial</a></li>
-        <li><a href="#diferenciais" onclick="closeMenu()">Diferenciais</a></li>
-        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
-        <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+        <li><a href="#servicos" onclick="closeMenu()" data-i18n="nav.servicos">Serviços</a></li>
+        <li><a href="#abordagem" onclick="closeMenu()" data-i18n="nav.abordagem">Nossa Abordagem</a></li>
+        <li><a href="#ia" onclick="closeMenu()" data-i18n="nav.ia">Inteligência Artificial</a></li>
+        <li><a href="#diferenciais" onclick="closeMenu()" data-i18n="nav.diferenciais">Diferenciais</a></li>
+        <li><a href="#faq" onclick="closeMenu()" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contato" onclick="closeMenu()" data-i18n="nav.contato">Contato</a></li>
       </ul>
+      <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Selecionar idioma">
+        <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
+      </div>
       <a
         href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20e%20quero%20um%20orçamento."
         class="nav-wa"
@@ -260,20 +270,20 @@
         <div class="hero-left">
           <div class="hero-eyebrow reveal">
             <span class="eyebrow-dot"></span>
-            <span>Dumas.Tech — Mais de 10 anos em produtos digitais</span>
+            <span data-i18n="hero.eyebrow">Dumas.Tech — Mais de 10 anos em produtos digitais</span>
           </div>
 
           <h1 class="hero-h1">
-            <div class="line reveal delay-1"><span>APLICAÇÕES</span></div>
+            <div class="line reveal delay-1"><span data-i18n="hero.l1">APLICAÇÕES</span></div>
             <div class="line reveal delay-2">
-              <span class="accent glitch" data-text="MOBILE">MOBILE</span>
+              <span class="accent glitch" data-text="MOBILE" data-i18n="hero.l2">MOBILE</span>
             </div>
             <div class="line reveal delay-3">
-              <span class="outline-text">E SOLUÇÕES DIGITAIS</span>
+              <span class="outline-text" data-i18n="hero.l3">E SOLUÇÕES DIGITAIS</span>
             </div>
           </h1>
 
-          <p class="hero-sub reveal delay-3">
+          <p class="hero-sub reveal delay-3" data-i18n="hero.sub">
             Transformamos ideias em produtos digitais sob medida. Há mais de 10
             anos somos especialistas em desenvolvimento de aplicações mobile
             para Android e iOS, além de sites e plataformas web. Construímos
@@ -294,10 +304,10 @@
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
                 />
               </svg>
-              Fale no WhatsApp
+              <span data-i18n="hero.cta_wa">Fale no WhatsApp</span>
             </a>
             <a href="#servicos" class="btn-outline">
-              Ver serviços
+              <span data-i18n="hero.cta_serv">Ver serviços</span>
               <svg
                 width="16"
                 height="16"
@@ -399,9 +409,9 @@
       <div class="container">
         <div class="services-top">
           <div class="reveal-left">
-            <div class="sec-label">O que fazemos</div>
+            <div class="sec-label" data-i18n="services.label">O que fazemos</div>
             <h2 class="sec-title">
-              NOSSOS<br /><span class="acc">SERVIÇOS</span>
+              <span data-i18n="services.title1">NOSSOS</span><br /><span class="acc" data-i18n="services.title2">SERVIÇOS</span>
             </h2>
           </div>
           <p class="sec-sub reveal-right" style="max-width: 380px">
@@ -432,6 +442,7 @@
                   <span class="s-tag">Arquitetura</span>
                   <span class="s-tag">Segurança</span>
                 </div>
+                <a href="desenvolvimento-de-aplicativos.html" class="service-link">Saiba mais sobre desenvolvimento de aplicativos →</a>
               </div>
               <div class="service-icon-right">📱</div>
             </div>
@@ -454,6 +465,7 @@
                   <span class="s-tag">Integrações</span>
                   <span class="s-tag">Segurança</span>
                 </div>
+                <a href="desenvolvimento-de-sistemas.html" class="service-link">Saiba mais sobre desenvolvimento de sistemas →</a>
               </div>
               <div class="service-icon-right">⚡</div>
             </div>
@@ -498,6 +510,7 @@
                   <span class="s-tag">Landing Pages</span>
                   <span class="s-tag">SEO</span>
                 </div>
+                <a href="desenvolvimento-de-sites.html" class="service-link">Saiba mais sobre criação de sites →</a>
               </div>
               <div class="service-icon-right">🌐</div>
             </div>
@@ -887,9 +900,9 @@
       <div class="container">
         <div class="diff-title-row">
           <div class="reveal-left">
-            <div class="sec-label">Dúvidas frequentes</div>
+            <div class="sec-label" data-i18n="faq.label">Dúvidas frequentes</div>
             <h2 class="sec-title">
-              PERGUNTAS<br /><span class="acc">FREQUENTES</span>
+              <span data-i18n="faq.title1">PERGUNTAS</span><br /><span class="acc" data-i18n="faq.title2">FREQUENTES</span>
             </h2>
           </div>
           <p class="sec-sub reveal-right" style="max-width: 360px">
@@ -1014,11 +1027,11 @@
           </div>
 
           <div class="contact-form-box reveal-right">
-            <div class="cf-title">Solicitar Orçamento</div>
+            <div class="cf-title" data-i18n="contact.form_title">Solicitar Orçamento</div>
 
             <div class="fg-row">
               <div class="fg">
-                <label>Nome</label>
+                <label data-i18n="contact.name">Nome</label>
                 <input
                   type="text"
                   id="cf-name"
@@ -1026,7 +1039,7 @@
                 />
               </div>
               <div class="fg">
-                <label>WhatsApp</label>
+                <label data-i18n="contact.phone">WhatsApp</label>
                 <input
                   type="tel"
                   id="cf-phone"
@@ -1036,12 +1049,12 @@
             </div>
 
             <div class="fg">
-              <label>E-mail</label>
+              <label data-i18n="contact.email">E-mail</label>
               <input type="email" id="cf-email" placeholder="seu@email.com" />
             </div>
 
             <div class="fg">
-              <label>Tipo de projeto</label>
+              <label data-i18n="contact.type">Tipo de projeto</label>
               <select id="cf-type">
                 <option value="">Selecione o tipo de projeto...</option>
                 <option>Aplicação Mobile (iOS e/ou Android)</option>
@@ -1054,23 +1067,23 @@
             </div>
 
             <div class="fg">
-              <label>Descrição do projeto</label>
+              <label data-i18n="contact.desc">Descrição do projeto</label>
               <textarea
                 id="cf-msg"
                 placeholder="Descreva brevemente o que você precisa..."
               ></textarea>
             </div>
 
-            <button class="btn-submit" onclick="sendForm()">
+            <button class="btn-submit" onclick="sendForm()" data-i18n="contact.submit">
               Enviar pelo WhatsApp →
             </button>
 
             <p class="cf-feedback" id="cf-feedback" role="status" aria-live="polite"></p>
 
             <div class="cf-trust">
-              <span>⚡ Resposta rápida</span>
-              <span>🔒 Seus dados protegidos</span>
-              <span>✓ Sem compromisso</span>
+              <span data-i18n="contact.trust1">⚡ Resposta rápida</span>
+              <span data-i18n="contact.trust2">🔒 Seus dados protegidos</span>
+              <span data-i18n="contact.trust3">✓ Sem compromisso</span>
             </div>
           </div>
         </div>
@@ -1117,17 +1130,16 @@
 
     <!-- Banner de Cookies / LGPD -->
     <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookie.text">
         Usamos cookies e tecnologias de medição para melhorar sua experiência e
         entender como você usa o site. Ao continuar navegando, você concorda com
-        a nossa
-        <a href="politica-de-privacidade.html">Política de Privacidade</a>.
+        a nossa Política de Privacidade.
       </div>
       <div class="cookie-actions">
-        <button class="cookie-btn cookie-decline" onclick="declineCookies()">
+        <button class="cookie-btn cookie-decline" onclick="declineCookies()" data-i18n="cookie.decline">
           Recusar
         </button>
-        <button class="cookie-btn cookie-accept" onclick="acceptCookies()">
+        <button class="cookie-btn cookie-accept" onclick="acceptCookies()" data-i18n="cookie.accept">
           Aceitar
         </button>
       </div>

@@ -1337,3 +1337,153 @@ footer {
 }
 
 .cf-trust span { white-space: nowrap; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Seletor de Idioma (PT / EN / ES)
+═══════════════════════════════════════════════════════════════════ */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(99,179,237,0.06);
+  border: 1px solid var(--border2);
+  border-radius: 50px;
+  padding: 3px;
+  margin-left: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text2);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s;
+}
+
+.lang-btn:hover { color: var(--white); }
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: var(--white);
+}
+
+.lang-switcher-mobile {
+  margin: 1.5rem 0 0;
+  justify-content: center;
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  /* No mobile, o seletor do topo some; usa o do menu mobile */
+  nav .lang-switcher:not(.lang-switcher-mobile) { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Páginas de Serviço (SEO)
+═══════════════════════════════════════════════════════════════════ */
+.service-page-hero {
+  padding: 140px 0 60px;
+  position: relative;
+}
+
+.service-page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.breadcrumb {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text3);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--text2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--cyan); }
+.breadcrumb span { margin: 0 6px; }
+
+.service-page-h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+.service-page-h1 .acc {
+  background: linear-gradient(90deg, var(--blue2), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-page-sub {
+  font-size: 1.15rem;
+  color: var(--text2);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 640px;
+}
+.service-page-sub strong { color: var(--text); font-weight: 600; }
+
+.service-content { padding: 40px 0 80px; }
+.service-content h2 {
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 2.5rem 0 1rem;
+}
+.service-content p {
+  font-size: 1.02rem;
+  color: var(--text2);
+  line-height: 1.75;
+  max-width: 760px;
+  margin-bottom: 1rem;
+}
+
+.service-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin: 2rem 0 1rem;
+}
+.service-feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.service-feature:hover { border-color: var(--border2); transform: translateY(-4px); }
+.service-feature .sf-icon { font-size: 1.8rem; display: block; margin-bottom: 10px; }
+.service-feature h3 {
+  font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 6px;
+}
+.service-feature p { font-size: 0.92rem; color: var(--text2); line-height: 1.5; margin: 0; }
+
+.service-content .faq-list { margin-top: 1.5rem; }
+
+/* Link "Saiba mais" nos cards de serviço da home */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--body-font);
+  transition: gap 0.25s, color 0.25s;
+}
+.service-link:hover { gap: 12px; color: var(--blue2); }
