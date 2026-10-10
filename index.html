@@ -7,14 +7,61 @@
     <!-- Verificação Google (não remover) -->
     <meta name="google-site-verification" content="Qp5QRkuJe-_9-1Eq6c0hypU45sZfs5QPzhnaIxuifBs" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — Google Analytics 4 + Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y41DB1366P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
+      // Consent Mode: por padrão NEGADO até o visitante aceitar (LGPD).
+      // O main.js libera para 'granted' quando o usuário clica em "Aceitar".
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+
       gtag('js', new Date());
 
+      // Google Analytics 4
       gtag('config', 'G-Y41DB1366P');
+
+      // Google Ads — SUBSTITUA AW-XXXXXXXXXX pelo seu ID de conversão do Google Ads
+      // (crie em: Google Ads > Ferramentas > Conversões)
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <!-- Meta Pixel (Facebook / Instagram Ads) — SUBSTITUA SEU_PIXEL_ID -->
+    <!-- Pegue o ID em: business.facebook.com > Gerenciador de Eventos > Fontes de dados -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      // Por padrão revoga o consentimento até o aceite no banner (LGPD)
+      fbq('consent', 'revoke');
+      fbq('init', 'SEU_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- Microsoft Clarity (mapa de calor + gravação de sessão, grátis) -->
+    <!-- SUBSTITUA SEU_CLARITY_ID. Pegue em: clarity.microsoft.com -->
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "SEU_CLARITY_ID");
     </script>
 
     <!-- TÍTULO: começa pela palavra-chave que as pessoas buscam -->
@@ -31,7 +78,7 @@
     />
     <meta name="author" content="Dumas.Tech" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://venanciokranvoski.github.io/" />
+    <link rel="canonical" href="https://dumastech.com.br/" />
 
     <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
@@ -40,8 +87,9 @@
       property="og:description"
       content="Mais de 10 anos criando aplicativos mobile, sites e sistemas sob medida para startups, instituições financeiras e grandes organizações."
     />
-    <meta property="og:url" content="https://venanciokranvoski.github.io/" />
-    <meta property="og:image" content="https://venanciokranvoski.github.io/og-image.png" />
+    <meta property="og:url" content="https://dumastech.com.br/" />
+    <meta property="og:image" content="https://dumastech.com.br/logoDumas.png" />
+    <meta property="og:image:alt" content="Dumas.Tech — Desenvolvimento de aplicativos e software" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Dumas.Tech" />
 
@@ -49,7 +97,12 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Desenvolvimento de Aplicativos Mobile e Software | Dumas.Tech" />
     <meta name="twitter:description" content="Aplicativos mobile, sites e sistemas sob medida com mais de 10 anos de experiência." />
-    <meta name="twitter:image" content="https://venanciokranvoski.github.io/og-image.png" />
+    <meta name="twitter:image" content="https://dumastech.com.br/logoDumas.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logoDumas.png" />
+    <link rel="apple-touch-icon" href="logoDumas.png" />
+    <meta name="theme-color" content="#03060f" />
 
     <!-- Dados estruturados (JSON-LD) -->
     <script type="application/ld+json">
@@ -58,9 +111,13 @@
         "@type": "ProfessionalService",
         "name": "Dumas.Tech",
         "description": "Estúdio de desenvolvimento de produtos digitais especializado em aplicações mobile (iOS e Android), sites, plataformas web e soluções com inteligência artificial.",
-        "url": "https://venanciokranvoski.github.io/",
+        "url": "https://dumastech.com.br/",
+        "logo": "https://dumastech.com.br/logoDumas.png",
+        "image": "https://dumastech.com.br/logoDumas.png",
         "telephone": "+5511952365724",
+        "email": "techdumas3@gmail.com",
         "priceRange": "$$",
+        "foundingDate": "2015",
         "areaServed": { "@type": "Country", "name": "Brasil" },
         "knowsAbout": [
           "Desenvolvimento de aplicativos mobile",
@@ -71,7 +128,55 @@
           "Inteligência artificial",
           "Produtos white label"
         ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+5511952365724",
+          "contactType": "customer service",
+          "availableLanguage": ["Portuguese"]
+        },
         "sameAs": ["https://wa.me/5511952365724"]
+      }
+    </script>
+
+    <!-- FAQ estruturado (pode gerar rich snippet no Google) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Que tipos de projeto a Dumas.Tech desenvolve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Desenvolvemos aplicativos mobile para iOS e Android, sites e plataformas web, sistemas sob medida e soluções com integração de inteligência artificial, para empresas de todos os portes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto tempo leva para desenvolver um projeto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O prazo depende da complexidade. Após entender sua necessidade, apresentamos um cronograma realista. Projetos menores podem ficar prontos em semanas; soluções complexas são planejadas por etapas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona o orçamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O orçamento é personalizado e sem compromisso. Você descreve seu projeto pelo WhatsApp ou formulário, e retornamos com uma análise e proposta alinhadas ao seu objetivo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Dumas.Tech atende empresas de qualquer segmento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Temos mais de 10 anos de experiência com startups, instituições financeiras, grandes organizações e setor público, em diferentes segmentos de mercado."
+            }
+          }
+        ]
       }
     </script>
 
@@ -101,6 +206,7 @@
         <li><a href="#abordagem">Nossa Abordagem</a></li>
         <li><a href="#ia">IA</a></li>
         <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
       <a
@@ -127,6 +233,7 @@
         <li><a href="#abordagem" onclick="closeMenu()">Nossa Abordagem</a></li>
         <li><a href="#ia" onclick="closeMenu()">Inteligência Artificial</a></li>
         <li><a href="#diferenciais" onclick="closeMenu()">Diferenciais</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
         <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
       </ul>
       <a
@@ -775,6 +882,85 @@
       </div>
     </div>
 
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="diff-title-row">
+          <div class="reveal-left">
+            <div class="sec-label">Dúvidas frequentes</div>
+            <h2 class="sec-title">
+              PERGUNTAS<br /><span class="acc">FREQUENTES</span>
+            </h2>
+          </div>
+          <p class="sec-sub reveal-right" style="max-width: 360px">
+            Tudo o que você precisa saber antes de iniciar seu projeto conosco.
+          </p>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>
+              <span>Que tipos de projeto a Dumas.Tech desenvolve?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Desenvolvemos aplicativos mobile para iOS e Android, sites e
+              plataformas web, sistemas sob medida e soluções com integração de
+              inteligência artificial, para empresas de todos os portes.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Quanto tempo leva para desenvolver um projeto?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              O prazo depende da complexidade. Após entender sua necessidade,
+              apresentamos um cronograma realista. Projetos menores podem ficar
+              prontos em semanas; soluções complexas são planejadas por etapas.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Como funciona o orçamento?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              O orçamento é personalizado e sem compromisso. Você descreve seu
+              projeto pelo WhatsApp ou formulário, e retornamos com uma análise e
+              proposta alinhadas ao seu objetivo.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>A Dumas.Tech atende empresas de qualquer segmento?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Sim. Temos mais de 10 anos de experiência com startups,
+              instituições financeiras, grandes organizações e setor público, em
+              diferentes segmentos de mercado.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Vocês dão suporte após a entrega do projeto?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Sim. Oferecemos acompanhamento, manutenção e evolução contínua do
+              produto, garantindo que ele continue funcionando e crescendo junto
+              com o seu negócio.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- Contato -->
     <section id="contato">
       <div class="container">
@@ -878,6 +1064,14 @@
             <button class="btn-submit" onclick="sendForm()">
               Enviar pelo WhatsApp →
             </button>
+
+            <p class="cf-feedback" id="cf-feedback" role="status" aria-live="polite"></p>
+
+            <div class="cf-trust">
+              <span>⚡ Resposta rápida</span>
+              <span>🔒 Seus dados protegidos</span>
+              <span>✓ Sem compromisso</span>
+            </div>
           </div>
         </div>
       </div>
@@ -900,7 +1094,9 @@
           <li><a href="#abordagem">Nossa Abordagem</a></li>
           <li><a href="#ia">IA</a></li>
           <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
         </ul>
       </div>
     </footer>
@@ -918,6 +1114,24 @@
         />
       </svg>
     </a>
+
+    <!-- Banner de Cookies / LGPD -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+      <div class="cookie-text">
+        Usamos cookies e tecnologias de medição para melhorar sua experiência e
+        entender como você usa o site. Ao continuar navegando, você concorda com
+        a nossa
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-decline" onclick="declineCookies()">
+          Recusar
+        </button>
+        <button class="cookie-btn cookie-accept" onclick="acceptCookies()">
+          Aceitar
+        </button>
+      </div>
+    </div>
 
     <script src="js/main.js"></script>
   </body>

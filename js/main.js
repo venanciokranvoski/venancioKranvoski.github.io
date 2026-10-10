@@ -145,13 +145,85 @@ function closeMenu() {
 window.toggleMenu = toggleMenu;
 window.closeMenu = closeMenu;
 
+/* ─── Rastreamento de Conversões (GA4 + Meta Pixel + Google Ads) ─── */
+/**
+ * Dispara um evento de conversão para todas as plataformas de uma vez.
+ * Seguro mesmo que alguma ferramenta não esteja carregada.
+ * @param {string} eventName  nome do evento (ex: 'contato_whatsapp')
+ * @param {object} params     dados extras opcionais
+ */
+function trackConversion(eventName, params = {}) {
+  // Google Analytics 4
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, params);
+    // Google Ads — SUBSTITUA pelo seu rótulo de conversão (AW-XXXXXXXXXX/AbCdEfGh)
+    gtag('event', 'conversion', {
+      send_to: 'AW-XXXXXXXXXX/SEU_LABEL_DE_CONVERSAO',
+    });
+  }
+  // Meta Pixel (Facebook / Instagram)
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', params);
+  }
+  // Microsoft Clarity — marca a sessão como conversão
+  if (typeof clarity === 'function') {
+    clarity('set', 'conversao', eventName);
+  }
+}
+window.trackConversion = trackConversion;
+
+/* Rastreia todo clique em link do WhatsApp automaticamente */
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+  if (link) {
+    trackConversion('contato_whatsapp', { metodo: 'whatsapp' });
+  }
+});
+
 /* ─── Form Submit ─── */
+function markError(el, hasError) {
+  if (!el) return;
+  el.classList.toggle('field-error', hasError);
+}
+
 function sendForm() {
-  const name  = document.getElementById('cf-name').value.trim();
-  const phone = document.getElementById('cf-phone').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const type  = document.getElementById('cf-type').value;
-  const msg   = document.getElementById('cf-msg').value.trim();
+  const nameEl  = document.getElementById('cf-name');
+  const phoneEl = document.getElementById('cf-phone');
+  const emailEl = document.getElementById('cf-email');
+  const typeEl  = document.getElementById('cf-type');
+  const msgEl   = document.getElementById('cf-msg');
+
+  const name  = nameEl.value.trim();
+  const phone = phoneEl.value.trim();
+  const email = emailEl.value.trim();
+  const type  = typeEl.value;
+  const msg   = msgEl.value.trim();
+
+  // Validação mínima para não perder leads mal preenchidos
+  const emailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const nameMissing  = name.length < 2;
+  // Precisa de pelo menos uma forma de contato (WhatsApp ou e-mail)
+  const contactMissing = !phone && !email;
+
+  markError(nameEl, nameMissing);
+  markError(emailEl, !emailOk || (contactMissing && !phone));
+  markError(phoneEl, contactMissing && !email);
+
+  const feedback = document.getElementById('cf-feedback');
+  if (nameMissing || !emailOk || contactMissing) {
+    if (feedback) {
+      feedback.textContent = contactMissing
+        ? 'Informe seu nome e ao menos um contato (WhatsApp ou e-mail).'
+        : (!emailOk ? 'Verifique o e-mail informado.' : 'Por favor, preencha seu nome.');
+      feedback.className = 'cf-feedback error';
+    }
+    return;
+  }
+
+  if (feedback) {
+    feedback.textContent = 'Abrindo o WhatsApp para enviar sua solicitação...';
+    feedback.className = 'cf-feedback success';
+  }
 
   let text = `Olá! Vim pelo site Dumas.Tech e gostaria de solicitar um orçamento.\n\n`;
   if (name)  text += `👤 *Nome:* ${name}\n`;
@@ -160,9 +232,53 @@ function sendForm() {
   if (type)  text += `💼 *Projeto:* ${type}\n`;
   if (msg)   text += `\n📝 *Descrição:*\n${msg}`;
 
-  window.open(`https://wa.me/5511963501236?text=${encodeURIComponent(text)}`, '_blank');
+  // Dispara a conversão de "orçamento solicitado"
+  trackConversion('solicitou_orcamento', { tipo_projeto: type || 'nao_informado' });
+
+  window.open(`https://wa.me/5511952365724?text=${encodeURIComponent(text)}`, '_blank');
 }
 window.sendForm = sendForm;
+
+/* ─── Banner de Cookies / LGPD ─── */
+(function initCookieBanner() {
+  const banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+
+  const consent = localStorage.getItem('dumas_cookie_consent');
+
+  // Se ainda não respondeu, mostra o banner
+  if (!consent) {
+    setTimeout(() => banner.classList.add('show'), 1200);
+  } else if (consent === 'accepted') {
+    enableTracking();
+  }
+
+  window.acceptCookies = function () {
+    localStorage.setItem('dumas_cookie_consent', 'accepted');
+    banner.classList.remove('show');
+    enableTracking();
+  };
+
+  window.declineCookies = function () {
+    localStorage.setItem('dumas_cookie_consent', 'declined');
+    banner.classList.remove('show');
+  };
+
+  // Atualiza o Google Consent Mode para liberar medição após o aceite
+  function enableTracking() {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+      });
+    }
+    if (typeof fbq === 'function') {
+      fbq('consent', 'grant');
+    }
+  }
+})();
 
 /* ─── Parallax ─── */
 window.addEventListener('scroll', () => {

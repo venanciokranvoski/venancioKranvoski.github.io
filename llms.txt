@@ -6,18 +6,18 @@ Dumas.Tech transforma a ideia do cliente em um produto digital funcional, escal�
 
 ## Serviços
 
-- [Aplicações Mobile](https://venanciokranvoski.github.io/#servicos): Apps nativos para Android e iOS, construídos conforme a necessidade do projeto. Podem operar online, offline ou híbridos. Foco em arquitetura, segurança e escalabilidade.
-- [Soluções Complexas e de Grande Porte](https://venanciokranvoski.github.io/#servicos): Sistemas web, portais e plataformas enterprise, com integrações e requisitos elevados de segurança.
-- [Inteligência Artificial](https://venanciokranvoski.github.io/#ia): IA aplicada com critério — atendimento automatizado, análise de dados, recomendações personalizadas, visão computacional, processamento de linguagem e automação de processos.
-- [Sites e Plataformas Web](https://venanciokranvoski.github.io/#servicos): Sites institucionais, landing pages e sistemas web responsivos e otimizados, que complementam aplicações mobile.
+- [Aplicações Mobile](https://dumastech.com.br/#servicos): Apps nativos para Android e iOS, construídos conforme a necessidade do projeto. Podem operar online, offline ou híbridos. Foco em arquitetura, segurança e escalabilidade.
+- [Soluções Complexas e de Grande Porte](https://dumastech.com.br/#servicos): Sistemas web, portais e plataformas enterprise, com integrações e requisitos elevados de segurança.
+- [Inteligência Artificial](https://dumastech.com.br/#ia): IA aplicada com critério — atendimento automatizado, análise de dados, recomendações personalizadas, visão computacional, processamento de linguagem e automação de processos.
+- [Sites e Plataformas Web](https://dumastech.com.br/#servicos): Sites institucionais, landing pages e sistemas web responsivos e otimizados, que complementam aplicações mobile.
 
 ## Diferenciais
 
-- [Especialização em Mobile](https://venanciokranvoski.github.io/#diferenciais): Aplicações mobile como principal atuação, com expertise consolidada em iOS e Android.
-- [Arquitetura e Escalabilidade](https://venanciokranvoski.github.io/#diferenciais): Projetos preparados para crescimento, com código organizado, documentado e governança técnica.
-- [Experiência em Diferentes Segmentos](https://venanciokranvoski.github.io/#diferenciais): Trajetória com startups, instituições financeiras, grandes organizações e setor público.
-- [Segurança e Conformidade](https://venanciokranvoski.github.io/#diferenciais): Experiência em projetos com exigências elevadas de segurança, boas práticas desde o início.
-- [Produtos Sob Medida e White Label](https://venanciokranvoski.github.io/#diferenciais): Soluções personalizadas e produtos white label pensados para escalar como modelo de negócio.
+- [Especialização em Mobile](https://dumastech.com.br/#diferenciais): Aplicações mobile como principal atuação, com expertise consolidada em iOS e Android.
+- [Arquitetura e Escalabilidade](https://dumastech.com.br/#diferenciais): Projetos preparados para crescimento, com código organizado, documentado e governança técnica.
+- [Experiência em Diferentes Segmentos](https://dumastech.com.br/#diferenciais): Trajetória com startups, instituições financeiras, grandes organizações e setor público.
+- [Segurança e Conformidade](https://dumastech.com.br/#diferenciais): Experiência em projetos com exigências elevadas de segurança, boas práticas desde o início.
+- [Produtos Sob Medida e White Label](https://dumastech.com.br/#diferenciais): Soluções personalizadas e produtos white label pensados para escalar como modelo de negócio.
 
 ## Contato
 

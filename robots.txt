@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://venanciokranvoski.github.io/sitemap.xml
+Sitemap: https://dumastech.com.br/sitemap.xml
