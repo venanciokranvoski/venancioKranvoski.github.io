@@ -1,2 +1,28 @@
+# Agente / ferramentas locais
 .claude/
+
+# macOS
 .DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Arquivos sensíveis (nunca commitar)
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# Logs e temporários
+*.log
+node_modules/
+.cache/

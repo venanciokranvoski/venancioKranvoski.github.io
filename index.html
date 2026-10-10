@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Segurança: política de conteúdo e proteções do navegador -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net https://www.facebook.com https://*.clarity.ms; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me; upgrade-insecure-requests"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <!-- Verificação Google (não remover) -->
     <meta name="google-site-verification" content="Qp5QRkuJe-_9-1Eq6c0hypU45sZfs5QPzhnaIxuifBs" />
 
@@ -217,7 +225,7 @@
       <a
         href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento."
         class="nav-wa"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -249,7 +257,7 @@
       <a
         href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20e%20quero%20um%20orçamento."
         class="nav-wa"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         onclick="closeMenu()"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -297,7 +305,7 @@
             <a
               href="https://wa.me/5511952365724?text=Olá!%20Quero%20conversar%20sobre%20meu%20projeto."
               class="btn-wa"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                 <path
@@ -638,7 +646,7 @@
             <a
               href="https://wa.me/5511952365724?text=Quero%20saber%20mais%20sobre%20IA%20no%20meu%20projeto."
               class="btn-outline"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               style="display: inline-flex; margin-top: 2rem"
             >
               Conversar sobre IA no meu projeto
@@ -881,7 +889,7 @@
           <a
             href="https://wa.me/5511952365724?text=Olá!%20Quero%20conversar%20sobre%20um%20projeto%20de%20aplicativo%20ou%20solução%20digital."
             class="btn-wa"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             style="display: inline-flex; font-size: 1.05rem; padding: 18px 40px"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
@@ -989,7 +997,7 @@
             </p>
 
             <div class="contact-items">
-              <a href="https://wa.me/5511952365724" class="ci" target="_blank">
+              <a href="https://wa.me/5511952365724" class="ci" target="_blank" rel="noopener noreferrer">
                 <div class="ci-icon ci-wa">
                   <svg
                     width="22"
@@ -1118,7 +1126,7 @@
     <a
       href="https://wa.me/5511952365724?text=Olá!%20Vim%20pelo%20site%20da%20Dumas.Tech%20e%20quero%20conversar%20sobre%20um%20projeto."
       class="wa-float"
-      target="_blank"
+      target="_blank" rel="noopener noreferrer"
       title="Falar no WhatsApp"
     >
       <svg viewBox="0 0 24 24">
